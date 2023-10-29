@@ -3,15 +3,12 @@ import {AdminContext, type AdminContextProps} from "./AdminContext";
 import {AdminUI, type AdminUIProps} from "../ha-components";
 
 
-
-
-export const Admin = (props: AdminProps) => {
-    const {
-        title,
-        layout,
-        dashboard,
-        children
-    } = props;
+export function Admin({
+                          title,
+                          layout,
+                          dashboard,
+                          children
+                      }: AdminProps) {
     return (
         <AdminContext>
             <AdminUI

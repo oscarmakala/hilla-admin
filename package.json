@@ -1,6 +1,6 @@
 {
-  "name": "admin-kit-client",
-  "description": "Admin Client",
+  "name": "hilla-admin",
+  "description": "Hilla Admin",
   "main": "index.js",
   "type": "module",
   "engines": {

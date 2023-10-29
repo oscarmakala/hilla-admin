@@ -1,10 +1,15 @@
 {
   "name": "hilla-admin-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hilla admin React",
   "main": "lib/react/src/index.js",
   "type": "module",
-  "directories": {
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oscarmakala/hilla-admin.git",
+    "directory": "hilla-admin/react"
+  },
+  "scripts": {
     "clean:build": "rimraf lib",
     "build": "npm run clean:build && npm run build:transpile",
     "build:transpile": "tsc -b",
@@ -19,17 +24,6 @@
   "files": [
     "**/*.{d.ts.map,d.ts,js.map,js}"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "exports": {
-    ".": {
-      "default": "./lib/react/src/index.js"
-    },
-    "./index.js": {
-      "default": "./lib/react/src/index.js"
-    }
-  },
   "author": "Oscar John Makala",
   "license": "ISC",
   "publishConfig": {
@@ -37,20 +31,20 @@
   },
   "dependencies": {
     "@hilla/frontend": "2.0.0",
-    "@hilla/react-components": "^2.2.1",
     "react": "^18.2.0",
-    "react-is": "^18.2.0",
     "react-router-dom": "^6.10.0",
     "tslib": "^2.3.1"
+
   },
   "devDependencies": {
+    "@hilla/react-components": "^2.2.1",
     "@esm-bundle/chai": "^4.3.4-fix.0",
     "@types/chai": "^4.2.22",
     "@types/chai-dom": "^1.11.0",
     "@types/lodash": "^4.14.200",
     "@types/mocha": "^10.0.1",
     "@types/react": "^18.0.25",
-    "@types/react-is": "^18.2.3",
+
     "@types/sinon": "^10.0.13",
     "@types/sinon-chai": "^3.2.9",
     "chai": "^4.3.4",

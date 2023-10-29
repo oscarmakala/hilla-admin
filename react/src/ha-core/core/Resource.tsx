@@ -1,18 +1,16 @@
-
 import * as React from "react";
-import {Route, Routes} from "react-router-dom";
 import {type ComponentType, isValidElement, type ReactElement} from "react";
-import { isValidElementType } from 'react-is';
-import { ResourceContextProvider } from "./ResourceContextProvider";
+import {Route, Routes} from "react-router-dom";
+import {ResourceContextProvider} from "./ResourceContextProvider";
 import type {ResourceProps} from "../types";
 
-export const Resource = (props: ResourceProps) => {
-    const {
-        create,
-        edit,
-        list, name,
-        show
-    } = props;
+export function Resource({
+                             create,
+                             edit,
+                             list, name,
+                             show,
+                             children
+                         }: ResourceProps) {
     return (
         <ResourceContextProvider value={name}>
             <Routes>
@@ -22,7 +20,7 @@ export const Resource = (props: ResourceProps) => {
                 {show && <Route path=":id/show/*" element={getElement(show)}/>}
                 {edit && <Route path=":id/*" element={getElement(edit)}/>}
                 {list && <Route path="/*" element={getElement(list)}/>}
-                {props.children}
+                {children}
             </Routes>
         </ResourceContextProvider>
     )
@@ -33,9 +31,9 @@ const getElement = (ElementOrComponent: ComponentType<any> | ReactElement) => {
         return ElementOrComponent;
     }
 
-    if (isValidElementType(ElementOrComponent)) {
-        return <ElementOrComponent />;
-    }
+    // if (isValidElementType(ElementOrComponent)) {
+    //     return <ElementOrComponent/>;
+    // }
 
     return null;
 };
