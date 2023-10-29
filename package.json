@@ -22,10 +22,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "github.com/vaadin/sso-kit"
+    "url": "github.com/oscarmakala/hilla-admin"
   },
-  "author": "Vaadin Ltd",
-  "license": "See license in LICENSE file",
+  "author": "Oscar John Makala",
   "devDependencies": {
     "@types/node": "^18.15.3",
     "concurrently": "^7.6.0",
